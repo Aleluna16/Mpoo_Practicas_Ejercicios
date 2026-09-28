@@ -1,0 +1,16 @@
+public class Practica4_ejercicio1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+    
+        int datos[] = {11, 3, 2, 450, 1000, 500, 6, 9, 1 , 22};
+                
+    Analizador_numeros analizador = new Analizador_numeros(datos);
+    analizador.Encontrar_may_Y_men();
+     
+    }
+    
+}
