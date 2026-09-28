@@ -1,0 +1,63 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package practica4_ejercicio2;
+
+/**
+ *
+ * @author Alelu
+ */
+public class Inventario {
+    String[] Nombres;
+    double [] precios;
+    int [] existencias;
+    
+    //Constructor
+    public Inventario(){}
+    
+    public Inventario(String [] Nombres, double [] precios, int []existencias){
+        this.Nombres = Nombres;
+        this.precios = precios;
+        this.existencias = existencias;
+    }
+  
+   public void mostrarInventario() {
+        System.out.println("=== INVENTARIO===");
+        for (int i = 0; i < Nombres.length; i++) {
+            System.out.println("ID " + i + " | " + Nombres[i] + 
+                               " | Precio: $" + precios[i] + 
+                               " | Stock: " + existencias[i]);
+        }
+    }
+   public void actualizarProducto(String nombreBuscado, double nuevoPrecio, int nuevaExistencia) {
+        boolean encontrado = false;
+        
+        for (int i = 0; i < Nombres.length; i++) {
+            if (Nombres[i].equalsIgnoreCase(nombreBuscado)) {
+                precios[i] = nuevoPrecio;
+                existencias[i] = nuevaExistencia;
+                System.out.println("\n-> Se actualizaron los datos de: " + Nombres[i]);
+                encontrado = true;
+                break; // Terminamos la búsqueda al encontrarlo
+            }
+        }
+
+        if (!encontrado) {
+            System.out.println("\n-> El producto '" + nombreBuscado + "' no existe.");
+        }
+    }
+   public double calcularValorTotal() {
+        double total = 0;
+        for (int i = 0; i < Nombres.length; i++) {
+            total += precios[i] * existencias[i];
+        }
+        return total;
+    }
+    }
+
+    
+    
+    
+    
+
