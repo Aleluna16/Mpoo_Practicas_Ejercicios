@@ -1,0 +1,56 @@
+*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package e2;
+
+/**
+ *
+ * @author fita
+ */
+public class Calificaciones {
+private double[] notas;
+
+    public Calificaciones(double[] notas) {
+        this.notas = notas;
+    }
+
+    public double calcularPromedio() {
+        double suma = 0;
+        for (double nota : notas) {
+            suma += nota;
+        }
+        return suma / notas.length;
+    }
+
+    public double obtenerMaximo() {
+        double max = notas[0];
+        for (int i = 1; i < notas.length; i++) {
+            if (notas[i] > max) {
+                max = notas[i];
+            }
+        }
+        return max;
+    }
+
+    public double obtenerMinimo() {
+        double min = notas[0];
+        for (int i = 1; i < notas.length; i++) {
+            if (notas[i] < min) {
+                min = notas[i];
+            }
+        }
+        return min;
+    }
+
+    public int contarAprobados() {
+        int aprobados = 0;
+        for (double nota : notas) {
+            if (nota >= 6.0) {
+                aprobados++;
+            }
+        }
+        return aprobados;
+    }
+    
+}
