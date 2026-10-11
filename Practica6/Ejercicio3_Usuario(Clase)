@@ -1,0 +1,35 @@
+public class Usuario {
+    
+    String Nombre;
+    double saldo;
+    int clave_tarjeta;
+    int clave_registrada = clave_tarjeta;
+    
+    public Usuario(){}
+    
+    public Usuario(String Nombre, double saldo, int clave_tarjeta,int clave_registrada){
+        this.Nombre = Nombre;
+        this.clave_registrada = clave_registrada;
+        this.saldo = saldo;
+        this.clave_tarjeta = clave_tarjeta;
+    }
+    
+    //Imprime el saldo
+    public void Mostrar_saldo(){
+        System.out.println("Su saldo es de: "+saldo);
+    }
+    
+    //Analiza la clave dada por el usuario
+    public int Analisis_clave(){    
+        //si la clave ingresada no es igual a la clave del registro, se termina de ejecutar el programa.
+        if(clave_tarjeta != clave_registrada){
+            System.out.println("Clave incorrecta");
+            return 0;
+        }else{
+            //Continua con el programa 
+            System.out.println("Bienvenido "+Nombre);
+            return 1;
+        }
+    }
+   
+}
