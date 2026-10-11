@@ -1,0 +1,62 @@
+import java.util.Scanner;
+public class Ejercicio3_Practica6 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+       Usuario cliente = new Usuario();
+       Scanner sc = new Scanner(System.in);
+       cliente.Nombre = "Joseph  Joestar";
+       cliente.clave_registrada = 1630;
+       cliente.saldo = 70000;
+       CajeroAutomatico atm = new CajeroAutomatico();
+       atm.Saldo_cajero = 300000;
+       
+       //Permite trabajar con el saldoo del cliente
+       atm.Usuariodelcajero(cliente);
+       int op;       
+       
+       System.out.println("===== CAJERO AUTOMATICO =====");
+       System.out.println("Ingrese su clave");
+       cliente.clave_tarjeta = sc.nextInt();
+       
+       //toma el resultado del analisis de la clave
+       //Recordando que al ser un booleano regresara 1 si es TRUE  o 0 si es FALSE
+       int resultadoClave = cliente.Analisis_clave();
+       
+       //Si es 1 (TRUE) continuara con la ejecución del programa
+       if(resultadoClave == 1){    
+           do{
+               //Se despliega el menu 
+       System.out.println("Ingrese su opción deseada:");
+       System.out.println("1: Retirar");
+       System.out.println("2: Depositar");
+       System.out.println("3: Mostrar saldo");
+       System.out.println("4: Salir");
+       op= sc.nextInt();
+                switch(op){
+                    case 1 -> {  
+                        System.out.println("Ingrese el el monto a retirar");
+                        atm.retiro= sc.nextDouble();
+                        atm.Retiro();
+                   }
+                    case 2 -> { 
+                        System.out.println("Ingrese el monto a depositar");
+                        atm.deposito = sc.nextDouble();
+                        atm.Deposito();
+                   }
+                    case 3 -> cliente.Mostrar_saldo();
+                    case 4 -> System.out.println("Hasta luego, gracias por utilizar banco R.A.T.A");
+                    default -> System.out.println("opción no valida, intente de nuevo");
+                }
+       }while(op !=4);//Mientras la opción sea distinta a 4 el programa seguira ejecutandose
+       }
+       else{
+           //Si resultadoClave es 0 (FALSE) Termina de ejecutar el programa
+           System.out.println("Tenga un buen dia");
+       }   
+    } 
+}
+    
