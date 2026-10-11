@@ -1,0 +1,20 @@
+class TablaDeMultiplicar {
+    int num;
+    
+    public TablaDeMultiplicar(){}
+    
+    public TablaDeMultiplicar(int num){
+        this.num = num;
+    }
+    
+    public int Impresión_Tabla(){
+        System.out.println("Tabla del  "+num);
+        
+        // El ciclo va hasta 11, debido a que el recorrido empieza en 0
+        for(int i = 1; i < 11; i++){
+            System.out.println(""+num*i);
+        }
+        return num;
+    }
+    
+}
