@@ -1,0 +1,49 @@
+class CajeroAutomatico {
+    double Saldo_cajero;
+    double deposito;
+    double retiro;
+    Usuario usuariodelcajero;
+    
+    public CajeroAutomatico(){}
+    
+    public CajeroAutomatico(double Saldo_cajero, double deposito, double retiro){
+        this.Saldo_cajero = Saldo_cajero;
+        this.deposito= deposito;
+        this.retiro = retiro;
+    }
+    
+    //Esta función permite concectar el usuario del main con el del cajero
+    public void Usuariodelcajero(Usuario usuariodelcajero) {
+        this.usuariodelcajero = usuariodelcajero;
+    }
+    
+    public void Deposito(){
+        //Evalua si la cantidad a depositar es mayor a 0
+    if (usuariodelcajero.saldo > 0) {
+                        usuariodelcajero.saldo = deposito + usuariodelcajero.saldo;
+                        Saldo_cajero = Saldo_cajero + deposito;
+                        System.out.println("Deposito exitoso.");
+                        System.out.println("Saldo actual: $" + usuariodelcajero.saldo);
+                    } else {
+                        System.out.println("La cantidad debe ser mayor a cero.");
+                    }
+
+    }
+    
+    public double Retiro(){
+        //Si el saldo del cajero es menor a la cantidad a retirar, no realiza la acción. 
+     if(Saldo_cajero < retiro){
+            System.out.println("Saldo del cajero insuficiente, intente mas tarde");
+        }else{
+         // Si el saldo del usuario es menor a la cantidad a retirar, tampoco realiza el retiro. 
+        if(usuariodelcajero.saldo < retiro || usuariodelcajero.saldo == 0){
+            System.out.println("No tiene fondos suficientes en su cuenta");
+        }
+        else{
+            usuariodelcajero.saldo = usuariodelcajero.saldo - retiro;
+            Saldo_cajero = Saldo_cajero - retiro;
+        }
+    }   
+        return usuariodelcajero.saldo;
+    }
+}
