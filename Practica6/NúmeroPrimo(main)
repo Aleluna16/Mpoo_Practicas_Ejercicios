@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class Ejercicio2_Practica6 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc = new Scanner(System.in); 
+        int rango;
+       
+        //le solicitamos el rango al usuario
+        System.out.println("Ingrese el rango");
+        rango= sc.nextInt();
+        System.out.println("Este son los números primos desde 2 hasta el rango dado: "+ rango);
+        for(int i = 2; i < rango; i++){
+            //Este if fue colocado debido a que por un error de logica desconocido, el for anidado no imprime el 2 
+            if(i== 2){
+                System.out.println(" "+i);
+            }
+            // comienza a analizar el modulo de cada número
+            // si el modulo de i con 1 es 0 entonces entra al ciclo for
+            if(i % 1 == 0){
+            for(int j = 2 ; j < i; j++){
+                
+                //si el modulo de i entre j es 0, no entra en el siguiente if
+                if(i % j == 0)break;
+                    if (j == i-1){
+                    System.out.println(" "+i);
+                    break;
+                    }
+            }
+            if(i> rango)break;
+            }
+            }
+    }
+}
