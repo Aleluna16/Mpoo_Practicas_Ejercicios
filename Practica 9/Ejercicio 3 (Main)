@@ -1,0 +1,40 @@
+public class Main_E3_p09 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+       System.out.println("Sistema de gestión de la Facultad de Ingeniería");
+        
+        // Arreglo de 4 estudiantes
+        Estudiante[] estudiante = new Estudiante[4];
+        
+       
+        double[] califJonathan = {9.0, 10.0, 8.0, 8.5, 9.0, 9.5};
+        double[] califThomas   = {7.5, 9.0, 10.0, 8.0, 7.0, 8.5};
+        double[] califAnthony  = {6.5, 7.0, 8.5, 7.5, 8.0, 7.0};
+        double[] califJohan    = {5.0, 8.0, 8.0, 6.0, 7.5, 7.0};
+        
+        estudiante[0] = new Estudiante("Jonathan Joestar", 21, califJonathan, 44, 3, 339007893);
+        estudiante[1] = new Estudiante("Thomas White", 18, califThomas, 22, 3, 345008893);
+        estudiante[2] = new Estudiante("Anthony Padilla", 27, califAnthony, 33, 3, 311006893);
+        estudiante[3] = new Estudiante("Johan Jordan", 20, califJohan, 44, 3, 229007444); 
+        
+        for (int i = 0; i < estudiante.length; i++) {
+            System.out.println("\n----------------------------------------");
+            System.out.println("Estudiante [" + (i + 1) + "]");
+            System.out.println("Nombre: " + estudiante[i].getNombre());
+            System.out.println("Número de cuenta: " + estudiante[i].getnum_cuenta());
+            System.out.println("Edad: " + estudiante[i].getedad() + " años | Semestre: " + estudiante[i].getsemestre());
+            System.out.println("Promedio: " + estudiante[i].promedio());
+            
+            System.out.print("Evaluación de créditos: ");
+            estudiante[i].Verif_creditos();
+        }
+        System.out.println("----------------------------------------");
+        
+            }
+    
+}
+
