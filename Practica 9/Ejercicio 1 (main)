@@ -1,0 +1,17 @@
+package p9;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Mascotas mascotas = new Mascotas();
+
+        mascotas.setNombre("Math");
+        mascotas.setEspecie("Perro");
+        mascotas.setEdad(9);
+
+        System.out.println("Nombre: " + mascotas.getNombre());
+        System.out.println("Especie: " + mascotas.getEspecie());
+        System.out.println("Edad: " + mascotas.getEdad());
+    }
+}
