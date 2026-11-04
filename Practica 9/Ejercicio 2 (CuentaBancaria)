@@ -1,0 +1,46 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package main1;
+
+/**
+ *
+ * @author leomu
+ */
+public class CuentaBancaria {
+    private String titular;
+    private double saldo;
+
+    // Constructor que aplica las validaciones mediante los setters
+    public CuentaBancaria(String titular, double saldoInicial) {
+        setTitular(titular);
+        setSaldo(saldoInicial);
+    }
+
+    // Getter para obtener el titular
+    public String getTitular() {
+        return titular;
+    }
+
+    // Setter con validación: el titular no debe estar vacío ni ser nulo
+    public void setTitular(String titular) {
+        if (titular == null || titular.trim().isEmpty()) {
+            throw new IllegalArgumentException("Error: El titular no puede quedar vacio.");
+        }
+        this.titular = titular;
+    }
+
+    // Getter para obtener el saldo
+    public double getSaldo() {
+        return saldo;
+    }
+
+    // Setter con validación: el saldo nunca puede ser negativo
+    public void setSaldo(double saldo) {
+        if (saldo < 0) {
+            throw new IllegalArgumentException("Error: El saldo no puede ser negativo.");
+        }
+        this.saldo = saldo;
+    }
+}
