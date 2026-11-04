@@ -1,0 +1,39 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package main1;
+
+/**
+ *
+ * @author leomu
+ */
+public class Main1 {
+public static void main(String[] args) {
+        // 1. Creación correcta de una cuenta
+        try {
+            CuentaBancaria cuenta1 = new CuentaBancaria("Carlos Perez", 500.0);
+            System.out.println("Cuenta creada exitosamente:");
+            System.out.println("Titular: " + cuenta1.getTitular());
+            System.out.println("Saldo: $" + cuenta1.getSaldo());
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("Probando validacion de titular vacio");
+        // 2. Intento de asignar un titular vacío
+        try {
+            CuentaBancaria cuenta2 = new CuentaBancaria("   ", 1000.0);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("Probando validacion de saldo negativo");
+        // 3. Intento de asignar un saldo negativo
+        try {
+            CuentaBancaria cuenta3 = new CuentaBancaria("Ana López", -200.0);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
