@@ -1,0 +1,57 @@
+package main_e3_p09;
+
+class Estudiante {
+private String Nombre;
+    private int edad;
+    private double[] Calificacion;
+    private double promedio;
+    private int creditos;
+    private int semestre;
+    private int num_cuenta;
+    
+    public Estudiante(String Nombre, int edad, double[] Calificacion, int creditos, int semestre, int num_cuenta){
+        this.Nombre = Nombre;
+        this.Calificacion = Calificacion; 
+        this.edad = edad;
+        this.creditos = creditos;
+        this.semestre = semestre;
+        this.num_cuenta = num_cuenta;
+    }
+    
+    // Metodos getter
+    //Ya que estos atributos no seran alterados durante la ejecución del programa se puede usar get en vez de set
+    public String getNombre(){
+        return Nombre;
+    }
+    public int getedad(){
+        return edad;
+    }
+    public int getsemestre(){
+        return semestre;
+    }
+    public int getnum_cuenta(){
+        return num_cuenta;
+    }
+    
+    public void Verif_creditos(){
+        if(creditos < 44){
+            System.out.println("Creditos incompletos, favor de regularizarse, Usted puede :) ");
+        }else if (creditos >= 44){
+            System.out.println("Buen avance, siga asi :)");
+        }
+    }
+    
+   
+    public double promedio(){
+        if (Calificacion == null || Calificacion.length == 0) {
+            return 0.0;
+        }
+        double suma = 0.0;
+        for (int i = 0; i < Calificacion.length; i++) {
+            suma += Calificacion[i];
+        }
+        return suma / Calificacion.length;
+    }
+    
+    
+}
