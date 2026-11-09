@@ -1,0 +1,28 @@
+class Empleado {
+    private String Nombre;
+    private int edad;
+    private int num_empleado;
+    
+    double salario_minimo;
+    
+    public Empleado(String Nombre, int edad, int num_empleado, double salario_minimo){
+        this.Nombre = Nombre;
+        this.edad = edad;
+        this.num_empleado= num_empleado;
+        this.salario_minimo = salario_minimo;
+    }
+    
+    public void Imprimir_empleado(){
+        System.out.println("Nombre: "+ Nombre+"\n Edad: "+ edad +"\n Numero de empleado: "+num_empleado);
+    }
+    
+    
+    public double Salario(){
+        return 0.0;
+    }
+    public void Imprimir_salario(){
+        System.out.println("Salario: "+ Salario());
+    }
+    
+ 
+}
