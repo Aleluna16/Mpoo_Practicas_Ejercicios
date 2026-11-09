@@ -1,0 +1,16 @@
+//Aunque un circulo no es un poligono, esta clase hereda los metodos de "poligoono"
+class Circulo extends poligono{
+    private double radio;
+    
+    public Circulo(String Nombre, int Lados, double radio){
+        super(Nombre,Lados);
+        this.radio = radio;
+    }
+    
+    @Override
+     public double Calcular_Area(){
+        //Va a calcular el area del cicrulo 
+        return Math.PI * Math.pow(radio, radio);
+    }
+    
+}
