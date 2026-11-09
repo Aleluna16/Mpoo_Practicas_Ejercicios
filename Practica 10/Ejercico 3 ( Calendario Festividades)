@@ -1,0 +1,22 @@
+import java.time.LocalDate;
+import java.time.MonthDay;
+import java.util.ArrayList;
+
+public class CalendarioFestividades {
+
+    private ArrayList<MonthDay> fechasFestivas;
+
+    public CalendarioFestividades() {
+        fechasFestivas = new ArrayList<>();
+
+        fechasFestivas.add(MonthDay.of(1, 1));
+        fechasFestivas.add(MonthDay.of(12, 25));
+        fechasFestivas.add(MonthDay.of(2, 14));
+    }
+
+    public boolean esFestivo(LocalDate fecha) {
+        MonthDay diaMes = MonthDay.from(fecha);
+
+        return fechasFestivas.contains(diaMes);
+    }
+}
