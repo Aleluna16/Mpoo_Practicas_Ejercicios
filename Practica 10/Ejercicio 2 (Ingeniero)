@@ -1,0 +1,21 @@
+public class Ingeniero extends Empleado{
+    private int num_cedula;
+    private String Especialidad;
+    
+    public Ingeniero(String Nombre, int edad, int num_empleado, double salario_minimo, int num_cedula, String Especialidad){
+        super(Nombre, edad, num_empleado, salario_minimo);
+        this.num_cedula = num_cedula;
+        this.Especialidad = Especialidad;
+    }
+    
+    @Override
+    public void Imprimir_empleado(){
+        super.Imprimir_empleado();
+        System.out.println("Cedula : "+ num_cedula+ " Especialidad: "+Especialidad);
+    }
+    
+    @Override
+     public double Salario(){
+        return salario_minimo * 4;
+    }
+}
