@@ -1,0 +1,33 @@
+import java.time.LocalDate;
+import java.time.DayOfWeek;
+
+public class Debito extends Tarjeta {
+    private CalendarioFestividades calendario = new CalendarioFestividades();
+    private LocalDate fechaAct = LocalDate.now();
+
+    public Debito(float saldo){
+        super(saldo);
+    }
+    
+    @Override
+    public float comision() {
+        if (fechaAct.getDayOfWeek() != DayOfWeek.SUNDAY && fechaAct.getDayOfWeek() != DayOfWeek.SATURDAY && !calendario.esFestivo(fechaAct)){
+            return 1.1f;
+        }
+        return 1.0f;
+    }
+
+    @Override
+    public boolean procesarPago(float monto) {
+        float montoF = monto*comision();
+        if (montoF > saldo){
+            System.out.println("\nNo hay saldo suficiente");
+            return false;
+        }
+        else {
+            saldo -= montoF;
+            System.out.println("\nPago con Debito exitoso. Tu saldo actual disponible es: " + saldo);
+            return true;
+        }
+    }
+}
