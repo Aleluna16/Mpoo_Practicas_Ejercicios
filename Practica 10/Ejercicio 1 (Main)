@@ -1,0 +1,30 @@
+public class Main_e1_p10 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        // hacemos un arreglo de dos poligonos para probar el funcionamiento del programa 
+        poligono [] p = new poligono[2];
+        p[0] = new Triangulo("Triangulo",3,7,10);
+        p[1] = new Circulo ("Circulo", 1, 10);
+        
+        //Calculo de area para el triangulo
+        System.out.println("----------------------");
+        p[0].Mostrar_Poligono();
+        p[0].Calcular_Area();
+        p[0].imprimir_Area();
+        System.out.println("----------------------");
+        
+        //Calculo de area para el circulo
+        
+        System.out.println("----------------------");
+        p[1].Mostrar_Poligono();
+        p[1].Calcular_Area();
+        p[1].imprimir_Area();
+        System.out.println("----------------------");
+
+    }
+    
+}
