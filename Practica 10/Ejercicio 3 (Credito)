@@ -1,0 +1,20 @@
+public class Credito extends Tarjeta {
+
+    public Credito(float saldo){
+        super(saldo);
+    }
+
+    @Override
+    public float comision(){
+        return 1.15f;
+    }
+
+    @Override
+    public boolean procesarPago(float monto) {        
+        saldo -= monto * comision();
+        if (saldo < 0) System.out.println("\nPago con Crédito exitoso. Tu deuda actual es: " + saldo);
+        else  System.out.println("\nPago con Crédito exitoso. Tu saldo actual disponible es: " + saldo);
+        
+        return true;
+    }
+}
