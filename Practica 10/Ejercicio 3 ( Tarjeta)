@@ -1,0 +1,11 @@
+public abstract class Tarjeta{
+    protected float saldo;
+
+    public Tarjeta(float saldo){
+        this.saldo = saldo;
+    }
+
+    public abstract boolean procesarPago(float monto);
+
+    public abstract float comision();
+}
