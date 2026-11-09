@@ -1,0 +1,27 @@
+class Gerente extends Empleado{
+    
+   private String Departamento_a_cargo; 
+   private int empleados;
+   private String Jefe;
+   
+   
+   public Gerente(String Nombre, int edad, int num_empleado,double salario_minimo, String Departamento_a_cargo, int empleados, String Jefe){
+       super(Nombre,edad, num_empleado,salario_minimo);
+       this.Departamento_a_cargo = Departamento_a_cargo;
+       this.Jefe = Jefe;
+       this.empleados = empleados;
+   }
+   
+   @Override 
+   public void Imprimir_empleado(){
+       super.Imprimir_empleado();
+       System.out.println("Departemento : "+ Departamento_a_cargo + " \nEmpelados a cargo: "+ empleados+ " \nJefe : "+ Jefe);
+   }
+   
+   @Override
+   public double Salario(){
+        return salario_minimo * 6;
+       
+    }
+    
+}
