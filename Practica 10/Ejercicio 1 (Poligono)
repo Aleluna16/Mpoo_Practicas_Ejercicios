@@ -1,0 +1,23 @@
+class poligono {
+    private String Nombre;
+    private int Lados;
+    
+    public poligono(String Nombre, int Lados){
+        this.Nombre = Nombre;
+        this.Lados = Lados;
+    }
+    
+    public void Mostrar_Poligono(){
+        System.out.println("Figura: "+Nombre+" Lados: "+ Lados);
+    }
+    
+    public double Calcular_Area(){
+        //Ahorita como no esta calculando nada, este metodo puede devolver 0
+        return 0;
+    }
+    
+    public void imprimir_Area(){
+        System.out.println("El area de tu figura es:  "+ Calcular_Area()+ " Unidades");
+    }
+    
+}
