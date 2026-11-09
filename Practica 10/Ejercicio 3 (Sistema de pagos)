@@ -1,0 +1,14 @@
+import java.util.ArrayList;
+
+public class Sistema_Pagos {
+    public static void main (String[] args){
+        ArrayList <Tarjeta> tarjetera = new ArrayList<>();
+
+        tarjetera.add(new Credito(500));
+        tarjetera.add(new Debito(3000));
+
+        for (Tarjeta t : tarjetera) {
+            t.procesarPago(500);
+        }
+    }
+}
