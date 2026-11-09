@@ -1,0 +1,24 @@
+class CTO extends Empleado{
+    //ej. Sistemas distribuidos, Cloud Native, Seguridad informática
+    private String Especialidad_Arquitectonica;
+    private int empleados;
+    
+    public CTO(String Nombre, int edad, int num_empleado, double salario_minimo, String Especialidad_Arquitectonica,int empleados){
+    super(Nombre, edad,num_empleado,salario_minimo);
+    this.Especialidad_Arquitectonica = Especialidad_Arquitectonica;
+    this.empleados = empleados;
+    
+}
+    
+    @Override
+    public void Imprimir_empleado(){
+        super.Imprimir_empleado();
+        System.out.println("Especialidad : "+ Especialidad_Arquitectonica+"Empleados a su cargo: "+ empleados);
+    }
+    
+    @Override
+     public double Salario(){
+        return salario_minimo * 2;
+    }
+    
+}
