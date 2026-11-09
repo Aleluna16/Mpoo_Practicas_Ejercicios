@@ -1,0 +1,19 @@
+class Triangulo extends poligono {
+    private double base;
+    private double altura;
+    
+    public Triangulo(String Nombre, int Lados, double base, double altura){
+        super(Nombre, Lados);
+        this.altura = altura;
+        this.base = base;
+    }
+    
+    //Sobre escribimos el metodo Calcular_Area
+    @Override
+     public double Calcular_Area(){
+         //A diferencia de la clase base, este metodo si esta realizando una operación 
+         //por lo que devolvera el resultado del area del triangulo 
+        return (base *altura)/2;
+    }
+    
+}
