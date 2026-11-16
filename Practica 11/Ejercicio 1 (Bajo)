@@ -1,0 +1,22 @@
+class Bajo extends Instrumento {
+    private int Cuerdas;
+    private String Cuerpo;
+    private double Longitud;
+    
+    Bajo(String Nombre, String Marca, int anio_creacion, int Cuerdas, String Cuerpo, double Longitud){
+        super(Nombre, Marca, anio_creacion);
+        this.Cuerdas = Cuerdas;
+        this.Cuerpo = Cuerpo;
+        this.Longitud = Longitud;
+    }
+    
+    void DescripcionBajo(){
+        super.Tarjeta_presentacion();
+        System.out.println("Cuerdas: "+Cuerdas+"\n Cuerpo: "+Cuerpo+"\n Longitud: "+Longitud+" [cm]");
+    }
+    
+    @Override
+    void HacerSonido(){
+        System.out.println("El bajo hace: wham wham whaam ");
+    }
+}
