@@ -1,0 +1,23 @@
+class Guitarra extends Instrumento{
+    private int Cuerdas;
+    private String Estilo; //Puede ser blues, jazz, rock, metal, etc
+    private String Tipo; //Electrica, acustica o electroacustica
+    
+    Guitarra(String Nombre, String Marca, int anio_creacion, int Cuerdas, String Estilo, String Tipo){
+        super(Nombre, Marca, anio_creacion);
+        this.Cuerdas = Cuerdas;
+        this.Estilo = Estilo;
+        this.Tipo = Tipo;
+    }
+    
+    void DescripcionGuitarra(){
+        //Se usa el metodo de la clase padre
+        super.Tarjeta_presentacion();
+        System.out.println("Cuerdas:  "+ Cuerdas + "\n Estilo:  "+Estilo+"\n Tipo: "+Tipo);
+    }
+    
+    @Override
+    void HacerSonido(){
+        System.out.println("La guitarra hace: Tring Tring Tring");
+    }
+}
