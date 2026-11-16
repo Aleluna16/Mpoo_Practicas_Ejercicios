@@ -1,0 +1,22 @@
+//Clase padre
+abstract class Instrumento {
+    
+    private String Nombre;
+    private String Marca;
+    private int anio_creacion;
+    
+    Instrumento(String Nombre, String Marca, int anio_creacion){
+        this.Nombre = Nombre;
+        this.Marca = Marca;
+        this.anio_creacion = anio_creacion;
+    }
+    
+    //Sirve como plantilla para los siguientes instrumentos
+    abstract void HacerSonido();
+    
+    //imprime los datos del instrumento
+    void Tarjeta_presentacion(){
+        System.out.println("Instrumento: "+ Nombre+ " \n Marca: "+ Marca+" \n año de creación : "+anio_creacion);
+    }
+    
+}
