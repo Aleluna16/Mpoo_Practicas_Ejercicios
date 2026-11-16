@@ -1,0 +1,24 @@
+class Carnivoro extends Animal implements Alimentacion {
+  
+    private String Habitat;
+    private String Comportamiento;
+    private int kilos_carne_dia;
+    
+    Carnivoro(String Nombre, String Familia, double peso, int edad, String Habitat, String Comportamiento, int kilos_carne_dia){
+        super(Nombre, Familia, peso, edad);
+        this.Habitat = Habitat;
+        this.Comportamiento = Comportamiento;
+        this.kilos_carne_dia = kilos_carne_dia;
+    }
+    
+    void PresentacionCarnivoro(){
+        super.ficha_presentacion();
+        System.out.println("Habitat: "+Habitat+"\n Comportamiento: "+Comportamiento+"\n Comida Suministrada: "+ kilos_carne_dia+"Kilos");
+    }
+    
+    @Override
+    public void Alimentarse(String Comida){
+        System.out.println(getNombre()+" se alimenta de: "+Comida);
+    }
+    
+}
