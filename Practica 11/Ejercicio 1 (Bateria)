@@ -1,0 +1,25 @@
+class Bateria extends Instrumento {
+    
+    private int Tambores;
+    private int Platillos;
+    private String Material_Cascos;
+    private String afinacion;
+    
+    Bateria(String Nombre, String Marca, int anio_creacion, int Tambores, int Platillos, String Material_Cascos, String afinacion){
+        super(Nombre,Marca,anio_creacion);
+        this.Platillos =Platillos;
+        this.Tambores = Tambores;
+        this.Material_Cascos = Material_Cascos;
+        this.afinacion = afinacion;
+    }
+    
+    void DescripcionBateria(){
+        super.Tarjeta_presentacion();
+        System.out.println("Platillos: "+Platillos+"\n Tambores: "+Tambores+"\n Material de los cascos: "+Material_Cascos+ " \n Afinación : "+afinacion);
+    }
+    
+    @Override
+    void HacerSonido(){
+        System.out.println("La bateria hace : Bum Bum Taz");
+    }
+}
