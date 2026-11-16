@@ -1,0 +1,21 @@
+class Reptil extends Animal implements Alimentacion {
+    
+    private int cantidad_huevos_anio;
+    
+    Reptil(String Nombre, String Familia, double peso, int edad, int cantidad_huevos_anio){
+        super(Nombre, Familia, peso, edad);
+        this.cantidad_huevos_anio = cantidad_huevos_anio;
+    }
+    
+    void PresentacionReptil(){
+        super.ficha_presentacion();
+        System.out.println("Cantidad de huevos en el año: "+ cantidad_huevos_anio);
+    }
+    
+    @Override
+    public void Alimentarse(String Comida){
+        System.out.println(getNombre()+"Se alimenta de: "+ Comida);
+    }
+    
+    
+}
