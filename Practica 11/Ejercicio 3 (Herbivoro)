@@ -1,0 +1,19 @@
+class Herbivoro extends Animal implements Alimentacion {
+    private int cantidad;
+    
+    Herbivoro(String Nombre, String Familia, double peso, int edad, int cantidad){
+        super(Nombre,Familia,peso,edad);
+        this.cantidad = cantidad;
+    }
+    
+    void PresentacionHerviboro(){
+        super.ficha_presentacion();
+        System.out.println("Cantidad en el Zoologico: "+cantidad);
+    }
+    
+    @Override
+    public void Alimentarse(String Comida){
+        System.out.println(getNombre()+"Se alimenta de: "+Comida);
+    }
+    
+}
