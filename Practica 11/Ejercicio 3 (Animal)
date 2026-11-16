@@ -1,0 +1,27 @@
+abstract class Animal {
+    
+    private String Nombre;
+    private String Familia;
+    private double Peso;
+    private int edad;
+    
+    Animal(String Nombre, String Familia, double peso, int edad){
+        this.Nombre = Nombre;
+        this.Familia = Familia;
+        this.Peso = Peso;
+        this.edad = edad;
+    }
+    
+    public String getNombre(){
+        return Nombre;
+    }
+    void ficha_presentacion(){
+        System.out.println("Animal: "+Nombre);
+        System.out.println("Familia: "+ Familia);
+        System.out.println("Edad: "+edad);
+        System.out.println("Peso: "+Peso);
+    }
+    
+    
+    
+}
