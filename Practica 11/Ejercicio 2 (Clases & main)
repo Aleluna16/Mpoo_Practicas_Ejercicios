@@ -1,0 +1,93 @@
+abstract class Vehiculo {
+    protected double combustible;
+
+    public Vehiculo(double combustible) {
+        this.combustible = combustible;
+    }
+
+    
+    public abstract void avanzar(double km);
+
+    public double getCombustible() {
+        return combustible;
+    }
+}
+
+class Automovil extends Vehiculo {
+    public Automovil(double combustible) {
+        super(combustible);
+    }
+
+    @Override
+    public void avanzar(double km) {
+        for (int i = 0; i < km; i++) {
+            combustible -= combustible * 0.10;
+            if (combustible < 0) combustible = 0;
+        }
+    }
+}
+
+class Autobus extends Vehiculo {
+    public Autobus(double combustible) {
+        super(combustible);
+    }
+
+    @Override
+    public void avanzar(double km) {
+        for (int i = 0; i < km; i++) {
+            combustible -= combustible * 0.20;
+            if (combustible < 0) combustible = 0;
+        }
+    }
+}
+
+
+class CamionDeCarga extends Vehiculo {
+    private double cargaKg;
+
+    public CamionDeCarga(double combustible, double cargaKg) {
+        super(combustible);
+        this.cargaKg = cargaKg;
+    }
+
+    @Override
+    public void avanzar(double km) {
+        double porcentaje = 0.10; // Sin carga (10%)
+        
+        if (cargaKg > 0 && cargaKg <= 150) {
+            porcentaje = 0.15; // Entre 1 y 150 kg (15%)
+        } else if (cargaKg > 150) {
+            porcentaje = 0.20; // Más de 150 kg (20%)
+        }
+
+        for (int i = 0; i < km; i++) {
+            combustible -= combustible * porcentaje;
+            if (combustible < 0) combustible = 0;
+        }
+    }
+}
+
+
+public class MainTransporte {
+    public static void main(String[] args) {
+        // Arreglo polimórfico de objetos Vehiculo
+        Vehiculo[] flota = {
+            new Automovil(100.0),
+            new Autobus(100.0),
+            new CamionDeCarga(100.0, 50.0),   
+            new CamionDeCarga(100.0, 200.0)  
+        }
+
+        double kilometros = 3.0;
+
+        // Recorrido de la flota utilizando polimorfismo para calcular el consumo dinámicamente
+        for (int i = 0; i < flota.length; i++) {
+            System.out.println("--- Vehiculo " + (i + 1) + " (" + flota[i].getClass().getSimpleName() + ") ---");
+            System.out.println("Combustible inicial: " + flota[i].getCombustible());
+            
+            flota[i].avanzar(kilometros);
+            
+            System.out.println("Combustible despues de " + kilometros + " km: " + flota[i].getCombustible() + "\n");
+        }
+    }
+}
