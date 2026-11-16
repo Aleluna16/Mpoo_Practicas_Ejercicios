@@ -1,0 +1,18 @@
+class Marino extends Animal implements Alimentacion {
+    private String Tipo_agua;
+    
+    Marino(String Nombre, String Familia, double peso, int edad, String Tipo_agua){
+         super(Nombre,Familia,peso,edad);
+         this.Tipo_agua = Tipo_agua;
+    }
+    
+    void PresentacionMarino(){
+        super.ficha_presentacion();
+        System.out.println("Aguas en las que habita: "+Tipo_agua);
+    }
+    
+    @Override
+    public void  Alimentarse(String Comida){
+        System.out.println(getNombre()+"Se alimenta de: "+Comida);
+    }
+}
