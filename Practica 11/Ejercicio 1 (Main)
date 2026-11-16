@@ -1,0 +1,60 @@
+public class Main_E1_P11 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Guitarra[] guitar = {
+            
+            new Guitarra("Black Star","Yamaha",1990,5,"Alternativo","Electrica"),
+            new Guitarra("Roundabout","Fender",1966,5,"Jazz","Electrica"),
+            new Guitarra("Deathmetal","Vox",2002,6,"Fusion","Acustica")
+        };
+        Trompeta[] trompt = {
+          new Trompeta("Trombon","Yamaha", 2022, "Plomo", "Sol"),
+          new Trompeta("Trompeta","Pirata",2025,"Cobre","RE")
+        };
+        Bateria[] batery = {
+            new Bateria("Siberian Khantu", "Fender", 1990, 4, 2 ,"Caoba", "Mi-Menor"),
+            new Bateria("Schizoid Man", "Yamaha", 1968, 3, 2, "Bambu", "La-Menor")
+        };
+        Bajo[] bass = {
+            new Bajo("Flourecent Adolecent", "Lespaul", 2007, 4, "Bambu", 20.33),
+            new Bajo("Epitaph","Gibson",1999,5,"Caoba",30.44)
+        };
+        
+        System.out.println("---------------");
+        System.out.println("Lista de guitarras:");
+        for (Guitarra g : guitar) {
+            g.DescripcionGuitarra();
+            g.HacerSonido();
+        }
+        System.out.println("---------------");
+        
+        System.out.println("---------------");
+        System.out.println("Lista de Trompetas: ");
+        for(Trompeta t : trompt){
+            t.DescripcionTrompeta();
+            t.HacerSonido();
+        }
+        System.out.println("---------------");
+        
+        System.out.println("---------------");
+        System.out.println("Lista de Baterias: ");
+        for(Bateria b : batery){
+            b.DescripcionBateria();
+            b.HacerSonido();
+        }
+        System.out.println("---------------");
+        
+        System.out.println("---------------");
+        System.out.println("Lista de Bajos: ");
+        for(Bajo ba : bass){
+            ba.DescripcionBajo();
+            ba.HacerSonido();
+        }
+        System.out.println("---------------");
+    }
+    
+}
