@@ -1,0 +1,8 @@
+//Una interfaz es un contrato para una clase, viendolo desde la perspectiva del mundo animal
+//la dieta de un animal puede ser vista como una interfaz, ya que todo los animales lo hacen
+public interface Alimentacion {
+    
+    //imprimira lo que come el animal
+    void Alimentarse(String Comida);
+    
+}
