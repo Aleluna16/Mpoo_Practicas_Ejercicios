@@ -1,0 +1,21 @@
+class Trompeta extends Instrumento{
+    
+    private String Material;
+    private String Calibracion;
+    
+    Trompeta (String Nombre, String Marca, int anio_creacion, String Material, String Calibracion){
+        super(Nombre, Marca, anio_creacion);
+        this.Material = Material;
+        this.Calibracion = Calibracion;
+    }
+    
+    void DescripcionTrompeta(){
+        super.Tarjeta_presentacion();
+        System.out.println("Material:  "+Material+"\n Calibracion: "+Calibracion);
+    }
+    
+    @Override
+    void HacerSonido(){
+        System.out.println("La trompeta hace tarará tarará");
+    }
+}
