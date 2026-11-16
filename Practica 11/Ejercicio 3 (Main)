@@ -1,0 +1,52 @@
+public class Main_E3_P11 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        System.out.println("Bienvenido al sistema de gestión de especies del Zoologico  'El coyote'");
+        System.out.println("Animales registrados en el año: ");
+        
+        System.out.println("-----------");
+        Alimentacion a = new Carnivoro("Leon", "Felina", 200, 13, "Savana", "Territorial", 5);
+        if (a instanceof Carnivoro A){
+        A.PresentacionCarnivoro();
+        }
+        a.Alimentarse("Carne");
+        System.out.println("-----------");
+        Alimentacion b = new Herbivoro("Alse", "Cerviade", 150, 10,10 );
+        if( b instanceof Herbivoro B){
+            B.PresentacionHerviboro();
+        }
+        b.Alimentarse("Bayas");
+        
+        System.out.println("-----------");
+        Alimentacion c = new Carnivoro("Oso Grissly", "Ursiade", 300, 20,"Bosque","Agresivo", 8);
+        if(c instanceof Carnivoro C){
+            C.PresentacionCarnivoro();
+        }
+        c.Alimentarse("Pescado");
+        System.out.println("-----------");
+        Alimentacion d = new Herbivoro("Camello","Cameliade", 120, 15, 6);
+        if (d instanceof Herbivoro D){
+            D.PresentacionHerviboro();
+        }
+        c.Alimentarse("Arbustos secos");
+         System.out.println("-----------");
+        Alimentacion e = new Marino("Tiburon", "Carcharhinidae",500,20,"Dulce");
+        if (e instanceof Marino E){
+            E.PresentacionMarino();
+        }
+        e.Alimentarse("Focas");
+        System.out.println("-----------");
+        Alimentacion f = new Reptil("Caiman","Alligatoridae", 400, 30, 10);
+        if( f instanceof Reptil F){
+            F.PresentacionReptil();
+        }
+        f.Alimentarse("Peces");
+        System.out.println("-----------");
+        
+}
+    
+}
