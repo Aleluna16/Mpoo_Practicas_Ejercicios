@@ -1,0 +1,25 @@
+package Modelo;
+
+import Excepciones.DatoInvalidoException;
+
+public class EmpleadoPorSueldo extends Empleado {
+    private double sueldoMensual;
+
+    public EmpleadoPorSueldo(String nombre, int id, double sueldoMensual) {
+        super(nombre, id);
+        if (sueldoMensual < 0) {
+            throw new DatoInvalidoException("El sueldo no puede ser negativo: " + sueldoMensual);
+        }
+        this.sueldoMensual = sueldoMensual;
+    }
+
+    @Override
+    public double calcularPago() {
+        return sueldoMensual;
+    }
+
+    @Override
+    public String getTipo() {
+        return "Por sueldo";
+    }
+}
