@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"Modelo","l":"Comisionista"},{"p":"Excepciones","l":"DatoInvalidoException"},{"p":"Modelo","l":"Empleado"},{"p":"Modelo","l":"EmpleadoPorHoras"},{"p":"Modelo","l":"EmpleadoPorSueldo"},{"p":"Principal","l":"Main"},{"p":"Excepciones","l":"NominaException"}];updateSearchResults();
