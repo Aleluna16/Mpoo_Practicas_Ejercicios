@@ -1,0 +1,47 @@
+package Modelo;
+
+import Excepciones.DatoInvalidoException;
+import Excepciones.NominaException;
+
+public class EmpleadoPorHoras extends Empleado {
+    private static final double HORAS_NORMALES = 160;
+    private static final double HORAS_MAXIMAS = 300;
+
+    private double tarifaHora;
+    private double horas;
+
+    public EmpleadoPorHoras(String nombre, int id, double tarifaHora) {
+        super(nombre, id);
+        if (tarifaHora < 0) {
+            throw new DatoInvalidoException("La tarifa no puede ser negativa: " + tarifaHora);
+        }
+        this.tarifaHora = tarifaHora;
+        this.horas = 0;
+    }
+
+    public void setHoras(double horas) {
+        this.horas = horas;
+    }
+
+    public double getHoras() {
+        return horas;
+    }
+
+    @Override
+    public double calcularPago() throws NominaException {
+        if (horas < 0 || horas > HORAS_MAXIMAS) {
+            throw new NominaException("Horas fuera de rango (0 a 300) para "
+                + getNombre() + ": " + horas);
+        }
+        if (horas <= HORAS_NORMALES) {
+            return horas * tarifaHora;
+        }
+        double extra = horas - HORAS_NORMALES;
+        return HORAS_NORMALES * tarifaHora + extra * tarifaHora * 2;
+    }
+
+    @Override
+    public String getTipo() {
+        return "Por horas";
+    }
+}
